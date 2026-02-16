@@ -1,0 +1,213 @@
+/* CSS Variables */
+:root {
+  /* Premium Palette - Mineral & Water */
+  --color-primary-dark: #0A1929;
+  --color-primary-blue: #004e92;
+  --color-accent-blue: #000428;
+  --color-accent-gold: #D4AF37;
+  --color-accent-gold-light: #F8E7AE;
+  --color-water-light: #E0F7FA;
+  --color-surface-glass: rgba(255, 255, 255, 0.05);
+
+  /* Gradients */
+  --gradient-ocean: linear-gradient(135deg, #000428 0%, #004e92 100%);
+  --gradient-royal-gold: linear-gradient(135deg, #D4AF37 0%, #F8E7AE 100%);
+  --gradient-mineral: linear-gradient(180deg, #F9FBFC 0%, #EFF6F9 100%);
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Spacing */
+  --container-width: 1400px;
+  --container-padding: clamp(1.5rem, 5vw, 4rem);
+
+  /* Easing */
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Reset & Base */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-primary-dark);
+  background: var(--color-water-light);
+  margin: 0;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-primary-dark);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Fluid Layout Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Premium Typography */
+.display-text {
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: -0.02em;
+}
+
+.heading-xl {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.text-gold {
+  background: var(--gradient-royal-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Premium Components */
+.btn-premium {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.4s var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-solid {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.btn-solid:hover {
+  background: var(--color-primary-blue);
+  box-shadow: 0 10px 30px rgba(0, 78, 146, 0.3);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-dark);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary-dark);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Glassmorphism System */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.glass-dark {
+  background: rgba(10, 25, 41, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Parallax Wrapper */
+.parallax-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Custom Cursor (Optional premium feel) */
+/* Can be added via JS if needed */
+
+/* Responsive Grid */
+.grid-flow {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-flow-2 {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .grid-flow-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
