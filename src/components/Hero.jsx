@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import heroBg from '../assets/hero.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +92,7 @@ const Hero = () => {
                     top: -50, left: 0,
                     width: '100%', height: '120%',
                     zIndex: 0,
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=2602&auto=format&fit=crop")',
+                    backgroundImage: `url(${heroBg})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     filter: 'brightness(0.95)'
@@ -110,7 +111,7 @@ const Hero = () => {
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)', // Responsive grid
+                    gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', // Responsive grid
                     gap: '2rem',
                     alignItems: 'center'
                 }}>
@@ -182,7 +183,7 @@ const Hero = () => {
                             alt="Agni Mineral Water Bottle"
                             style={{
                                 width: '100%',
-                                maxWidth: '980px',
+                                maxWidth: '1200px',
                                 height: 'auto',
                                 filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.2))',
                                 transformOrigin: 'center center',
