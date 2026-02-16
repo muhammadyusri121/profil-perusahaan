@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import heroBg from '../assets/hero.jpg';
+import agniBottle from '../assets/agni-bottle.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -179,7 +180,7 @@ const Hero = () => {
 
                         <img
                             ref={bottleRef}
-                            src="src/assets/agni-bottle.png"
+                            src={agniBottle}
                             alt="Agni Mineral Water Bottle"
                             style={{
                                 width: '100%',
